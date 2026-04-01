@@ -1,0 +1,23 @@
+[project]
+name = "prompt-eval-engineer"
+version = "0.1.0"
+description = "Workflow para evaluar y aplicar prompt engineering de forma iterativa"
+authors = [
+    {name = "Victor Cabello",email = "vmeca87@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ollama>=0.6.1,<0.7.0"
+]
+
+
+[tool.poetry]
+packages = [{include = "prompt_eval_engineer", from = "src"}]
+
+[tool.poetry.scripts]
+eval = "prompt_eval_engineer.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
