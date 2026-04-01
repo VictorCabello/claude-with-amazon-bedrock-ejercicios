@@ -11,6 +11,9 @@ de dependencias gestionado con [Poetry](https://python-poetry.org/).
 | Ejercicio | Descripción |
 |-----------|-------------|
 | [chat-multi-input](./chat-multi-input/) | Conversación multi-turn con manejo de historial |
+| [chat-system-prompt](./chat-system-prompt/) | Uso de system prompt para definir rol y restricciones del asistente |
+| [chat-streaming](./chat-streaming/) | Streaming de tokens en tiempo real en lugar de esperar la respuesta completa |
+| [chat-prefill-stop](./chat-prefill-stop/) | Prefilled assistant messages y stop sequences para controlar la salida |
 
 ## Requisitos generales
 
