@@ -1,0 +1,24 @@
+[project]
+name = "eval-data-assets"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Victor Cabello",email = "vmeca87@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ollama (>=0.6.1,<0.7.0)"
+]
+
+[tool.poetry]
+packages = [{include = "claude_with_amazon_bedrock_ejercicio_eval_data_assets", from = "src"}]
+
+
+[tool.poetry.scripts]
+generate = "claude_with_amazon_bedrock_ejercicio_eval_data_assets.main:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
