@@ -71,11 +71,15 @@ class EvalDataGenerator:
             options={"stop": self.stop_sequences},
         )
 
+        continuation: str = response['message']['content']
+
+        raw_json: str = self.prefill + continuation
+
         # La API devuelve solo la continuación a partir del prefill.
         # Reconstruimos el JSON completo concatenando prefill + continuación + '}'.
         # El '}' lo añadimos nosotros porque la stop sequence lo consume sin incluirlo.
-        continuation: str = response['message']['content']
-        raw_json: str = self.prefill + continuation + "}"
+        if raw_json[-1] != '}':
+            raw_json += "}"
 
         try:
             record: dict = json.loads(raw_json)
